@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Etch a Sketch</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <div class="heading">
+    <h1>Etch a Sketch</h1>
+  </div>
+  <div class="main-container">
+    <div class="container">
+    </div>
+    <div class="options">
+      <div class="modes">
+        <button type="dbutton" id="colorMode" class='button1' value="color">Color</button>
+        <button type="button" id="rainbowMode" class='button1' value="rainbow">Rainbow</button>
+      </div>
+      <button type="button" class="button1">
+        <input type="color" value="#000" id="cursorColor">
+        Cursor Color
+      </button>
+      <button type="button" id="eraserBtn" class="button1">Eraser</button>
+      <button type="button" id="clearBtn" class="button1">Clear</button>
+      <label for="gridSize" id="gridSizeLabel">16 x 16</label>
+      <input type="range" value="16" min="1" max="90" id="gridSize" name="gridSize">
+
+    </div>
+  </div>
+</body>
+
+</html>
