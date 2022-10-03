@@ -26,19 +26,22 @@ currentGridSize.addEventListener('mousemove', () => {
   setUpGrid(newSize);
 });
 clearBtn.addEventListener('click', () => setUpGrid(document.getElementById('gridSize').value));
+// Set up empty grid of size 16
 setUpGrid(DEFAULT_SIZE);
 
 function setUpGrid(gridSize) {
+  // Remove Grid if already a grid exists
   let test = document.getElementById('grid');
   if (test) {
     test.parentNode.removeChild(test);
   }
+  // Create new grid
   let grid = document.createElement('div');
   grid.style['border'] = '30px solid #41b8a3';
   grid.style['width'] = 'fit-content';
   grid.style['borderRadius'] = '13px';
   grid.id = 'grid';
-  /* grid.style['boxSizing'] = 'border-box'; */
+  // Create individual "pixels" of the grid
   for (let i = 0; i < gridSize; i++) {
     let rowDiv = document.createElement('div');
     rowDiv.style['display'] = 'flex';
@@ -57,6 +60,7 @@ function setUpGrid(gridSize) {
   gridContainer.appendChild(grid);
 }
 
+// Set color of the pixel according to the mode
 function setColor(div, mode) {
   let color;
   if (mode == 'color') {
@@ -73,6 +77,7 @@ function setColor(div, mode) {
   }
   div.style['backgroundColor'] = color;
 }
+// Generate Bright random colors for rainbow mode
 function getRainbowColor(){ 
   return "hsl(" + 360 * Math.random() + ',' +
              (25 + 70 * Math.random()) + '%,' + 
